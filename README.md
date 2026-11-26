@@ -1,4 +1,4 @@
-# Petrographic Mineral Classification from Microscope Videos
+# Petrographic mineral classification from microscope videos
 
 End-to-end Deep Learning pipeline to classify **biotite** vs. **hornblende** from 360° rotating petrographic microscopy video sequences (**PPL + XPL**). Includes automated data acquisition, semi-supervised crystal segmentation with SAM2, tensorization, 7 models trained under stratified 5-fold cross-validation, and evaluation/explainability (XAI) scripts.
 
@@ -6,7 +6,7 @@ End-to-end Deep Learning pipeline to classify **biotite** vs. **hornblende** fro
 
 ---
 
-## Visual Overview & Key Results
+## Visual overview and key results
 
 Unlike static single-frame methods, modeling the full optical rotation sequence captures **pleochroism** (PPL) and **optical extinction** (XPL). Spatio-temporal Grad-CAM and attention maps verify that the network focuses on physically meaningful extinction angles rather than background artifacts:
 
@@ -14,7 +14,7 @@ Unlike static single-frame methods, modeling the full optical rotation sequence 
 | :---: | :---: |
 | ![Biotite Grad-CAM](Results/gradcam/Video_Memoria_Biotita.gif) | ![Hornblende Grad-CAM](Results/gradcam/Video_Memoria_Hornblenda.gif) |
 
-### Winning Model Performance: `ResNet18 + LSTM` (5-Fold Stratified CV)
+### Winning model performance: `ResNet18 + LSTM` (5-Fold Stratified CV)
 
 With 97 isolated crystals, `ResNet50` overfitted early (~95% flat across temporal heads). Adopting `ResNet18` as a natural regularizer alongside explicit physical descriptors (`|PPL - XPL|`, temporal intensity derivatives, and sinusoidal angle encoding) revealed the expected architectural hierarchy: **Static < MeanPooling < Attention < LSTM**.
 
@@ -32,7 +32,7 @@ With 97 isolated crystals, `ResNet50` overfitted early (~95% flat across tempora
 
 ---
 
-## Project Structure
+## Project structure
 
 ```
 MINERAL_CLASSIFICATION_TFG/
@@ -163,7 +163,7 @@ Interactive CLI menu. Selecting an option `[1–7]` trains the corresponding arc
 
 **Shared hyperparameters**: `BATCH_SIZE=4`, `LR=1e-4`, `MAX_FRAMES=72`, weight decay `1e-4`, inverse-frequency weighted loss for class balancing. ResNet18 and StaticImage runs use `CosineAnnealingLR` and mixed precision (CUDA).
 
-### 5. Evaluation & Visualization
+### 5. Evaluation and visualization
 
 ```bash
 python evaluate_models.py
