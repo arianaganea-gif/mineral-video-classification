@@ -1,0 +1,19 @@
+# Dades pesants i tensors
+Dataset/original_videos/
+Dataset/segmented_minerals/
+Dataset/segmented_minerals_tensor/
+
+# Pesos de models i checkpoints
+Models/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Entorns Python i macOS
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.ipynb_checkpoints/

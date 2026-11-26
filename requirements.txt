@@ -1,0 +1,25 @@
+# Classificació de Minerals — TFG
+# Dependencies (Python >= 3.10)
+
+# --- Deep Learning ---
+torch>=2.0.0
+torchvision>=0.15.0
+
+# --- Data science / mètriques ---
+numpy>=1.24.0
+scikit-learn>=1.3.0
+matplotlib>=3.7.0
+seaborn>=0.13.0
+
+# --- Imatge ---
+opencv-python>=4.8.0
+Pillow>=10.0.0
+
+# --- Scrapping (descàrrega del microscopi virtual) ---
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+
+# --- Segmentació ---
+# SAM2 no està a PyPI - instal·la-ho per separat:
+#   pip install git+https://github.com/facebookresearch/segment-anything-2.git
+# I col·loca el checkpoint sam2_hiera_large.pt dins de Segmentation/
