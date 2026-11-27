@@ -43,7 +43,7 @@ MINERAL_CLASSIFICATION_TFG/
 ├── gradcam_attention.py            # Grad-CAM on ResNet50 + Attention
 │
 ├── Dataset/
-│   ├── METADADES.md                # Dataset schema & metadata
+│   ├── METADATA.md                # Dataset schema & metadata
 │   ├── download_minerals.py        # Automated frame scraper (Biotite + Hornblende)
 │   ├── original_videos/            # [gitignored] Raw JPGs downloaded from Virtual Microscope
 │   ├── segmented_minerals/         # [gitignored] Isolated crystal PNGs (SAM2)
@@ -141,7 +141,7 @@ cd Segmentation
 python TF2Tensor.py
 ```
 
-Generates `Dataset/segmented_minerals_tensor/<Mineral>/<...>.pt` (see exact tensor schema in `Dataset/METADADES.md`).
+Generates `Dataset/segmented_minerals_tensor/<Mineral>/<...>.pt` (see exact tensor schema in `Dataset/METADATA.md`).
 
 ### 4. Model training
 
